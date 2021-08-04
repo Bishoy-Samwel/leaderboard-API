@@ -12,7 +12,8 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      title: 'Development',
+      title: 'Leaderboard',
+      template: './src/index.html',
     }),
   ],
   output: {
