@@ -50,11 +50,11 @@ main {
 }
 
 #scores p:nth-child(odd) {
-  background: rgb(245, 174, 174);
+  background: #f19fa660;
 }
 
 #scores p:nth-child(even) {
-  background: rgb(240, 193, 193);
+  background: #ebc5ce;
 }
 
 form {
