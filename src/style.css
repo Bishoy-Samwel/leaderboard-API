@@ -1,0 +1,72 @@
+body {
+  background-color: azure;
+  margin: 0 auto;
+  padding: 0;
+}
+
+header {
+  margin-top: 3%;
+  margin-left: 3%;
+}
+
+main {
+  flex-wrap: wrap;
+}
+
+.d-flex {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.flex-1 {
+  flex: 1;
+  margin: 0 5%;
+  text-align: center;
+}
+
+#refresh-btn {
+  height: 30px;
+  align-self: center;
+  margin: 2%;
+}
+
+.scores {
+  border: solid 1px black;
+}
+
+.scores p {
+  margin: 0;
+  padding: 2%;
+}
+
+.scores p:nth-child(odd) {
+  background: rgb(230, 230, 230);
+}
+
+.scores p:nth-child(even) {
+  background: rgb(255, 255, 255);
+}
+
+form {
+  width: fit-content;
+  flex-direction: column;
+  align-content: space-between;
+  justify-content: space-evenly;
+  margin: auto;
+}
+
+form input {
+  margin: 4% 0%;
+}
+
+#submit {
+  align-self: flex-end;
+}
+
+footer {
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background: rgb(218, 218, 165);
+}
