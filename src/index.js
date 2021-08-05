@@ -29,7 +29,11 @@ const addScore = async () => {
   }
 };
 
-
+submitBtn.addEventListener('click', (e) => {
+  e.preventDefault();
+  addScore();
+  document.querySelector('form').reset();
+});
 
 const getScores = async () => {
   const request = await fetch(url);
