@@ -30,20 +30,21 @@ main {
   margin: 2%;
 }
 
-.scores {
+#scores {
   border: solid 1px black;
 }
 
-.scores p {
+#scores p {
   margin: 0;
   padding: 2%;
+  text-align: start;
 }
 
-.scores p:nth-child(odd) {
+#scores p:nth-child(odd) {
   background: rgb(230, 230, 230);
 }
 
-.scores p:nth-child(even) {
+#scores p:nth-child(even) {
   background: rgb(255, 255, 255);
 }
 
