@@ -3,29 +3,29 @@ import './style.css';
 const scoresDiv = document.querySelector('#scores');
 const refreshBtn = document.querySelector('#refresh-btn');
 const submitBtn = document.querySelector('#submit-btn');
-const url = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/W17IP19R1ub134pDoyGK/scores/';
+const url = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/ATKgqVUa9t3EVioWm1UK/scores';
 
 const CreateScore = (item) => {
   const scorePar = document.createElement('p');
-  scorePar.textContent = `${item.name}: ${item.score}`;
+  scorePar.textContent = `${item.user}: ${item.score}`;
   return scorePar;
 };
 
-const sendData = async (name, score) => {
-  await fetch('url', {
+const sendData = async (user, score) => {
+  await fetch(url, {
     method: 'POST',
-    body: JSON.stringify({ name, score }),
+    body: JSON.stringify({ user, score }),
     headers: { 'Content-type': 'application/json; charset=UTF-8' },
   })
     .then((response) => response.json());
 };
 
 const addScore = async () => {
-  const name = document.querySelector('#name-txt').value;
+  const user = document.querySelector('#user-txt').value;
   const score = document.querySelector('#score-txt').value;
-  if (name.length && Number.isInteger(parseInt(score, 10))) {
-    scoresDiv.appendChild(CreateScore({ name, score }));
-    await sendData(name, score);
+  if (user.length && Number.isInteger(parseInt(score, 10))) {
+    scoresDiv.appendChild(CreateScore({ user, score }));
+    await sendData(user, score);
   }
 };
 
@@ -44,6 +44,7 @@ const getScores = async () => {
 const displayScores = async () => {
   const ans = await getScores();
   const scores = ans.result;
+  scoresDiv.innerHTML = '';
   scores.forEach((item) => {
     scoresDiv.appendChild(CreateScore(item));
   });
@@ -51,6 +52,7 @@ const displayScores = async () => {
 
 refreshBtn.addEventListener('click', (e) => {
   e.preventDefault();
-  scoresDiv.innerHTML = '';
   displayScores();
 });
+
+displayScores();
