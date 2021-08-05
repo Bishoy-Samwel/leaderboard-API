@@ -20,6 +20,15 @@ const sendData = async (name, score) => {
     .then((response) => response.json());
 };
 
+const addScore = async () => {
+  const name = document.querySelector('#name-txt').value;
+  const score = document.querySelector('#score-txt').value;
+  if (name.length && Number.isInteger(parseInt(score, 10))) {
+    scoresDiv.appendChild(CreateScore({ name, score }));
+    await sendData(name, score);
+  }
+};
+
 
 
 const getScores = async () => {
