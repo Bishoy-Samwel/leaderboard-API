@@ -3,7 +3,7 @@ import './style.css';
 const scoresDiv = document.querySelector('#scores');
 const refreshBtn = document.querySelector('#refresh-btn');
 const submitBtn = document.querySelector('#submit-btn');
-const url = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/ATKgqVUa9t3EVioWm1UK/scores';
+const url = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/yqhtsYxeMbsN9aMS6o5A/scores';
 
 const CreateScore = (item) => {
   const scorePar = document.createElement('p');
